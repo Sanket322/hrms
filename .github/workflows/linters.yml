@@ -26,7 +26,7 @@ jobs:
 
   linters:
     if: github.event_name == 'pull_request'
-    uses: Sanket322/workflow_testing/.github/workflows/linters.yml@main 
+    uses: Sanket322/workflow_testing/.github/workflows/linters.yml@develop 
           
   # linter:
   #   name: 'Frappe Linter'
