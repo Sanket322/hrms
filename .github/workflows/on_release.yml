@@ -13,7 +13,7 @@ jobs:
       git_committer_name: "Frappe PR Bot"
       git_committer_email: "developers@frappe.io"
     secrets:
-      token: ${{ secrets.RELEASE_TOKEN }}
+      token: ${{ secrets.GITHUB_TOKEN }}
 
 
 # name: Generate Semantic Release
