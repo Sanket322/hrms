@@ -25,5 +25,5 @@ jobs:
           npx commitlint --verbose --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }}
 
   linters:
-    # if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request'
     uses: Sanket322/testing/.github/workflows/linters.yml@main
