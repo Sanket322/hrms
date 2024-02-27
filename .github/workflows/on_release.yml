@@ -7,11 +7,6 @@ on:
 jobs:
   call-workflow-passing-data:
     uses: Sanket322/workflow_testing/.github/workflows/on_release.yml@main
-    with: 
-      git_author_name: "Frappe PR Bot"
-      git_author_email: "developers@frappe.io"
-      git_committer_name: "Frappe PR Bot"
-      git_committer_email: "developers@frappe.io"
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
 
