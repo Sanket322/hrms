@@ -8,5 +8,4 @@ jobs:
   call-workflow-passing-data:
     uses: Sanket322/testing/.github/workflows/server-tests.yml@main
     with: 
-      base_ref: ""
       REPO_NAME: ${{ github.event.repository.name }}
