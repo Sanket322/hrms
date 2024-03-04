@@ -10,4 +10,4 @@ jobs:
     with: 
       base_ref: "Frappe PR Bot"
     secrets:
-      codecov_token: "hello"
+      callers_codecov_token: "hello"
