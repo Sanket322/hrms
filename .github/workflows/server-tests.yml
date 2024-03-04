@@ -9,5 +9,3 @@ jobs:
     uses: Sanket322/testing/.github/workflows/server-tests.yml@main
     with: 
       base_ref: "Frappe PR Bot"
-    secrets:
-      callers_codecov_token: "hello"
