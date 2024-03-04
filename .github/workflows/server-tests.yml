@@ -8,4 +8,4 @@ jobs:
   call-workflow-passing-data:
     uses: Sanket322/testing/.github/workflows/server-tests.yml@main
     with: 
-      base_ref: "change-workflow"
+      base_ref: github.base_ref || github.ref_name
