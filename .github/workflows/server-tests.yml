@@ -6,7 +6,7 @@ on:
       - develop
 jobs:
   call-workflow-passing-data:
-    uses: Sanket322/india_compliance/.github/workflows/server-tests.yml@main
+    uses: Sanket322/india_compliance/.github/workflows/server-tests.yml@Reusable_Workflow
     with: 
       base_ref: "hello"
       repo_name: "repo name"
