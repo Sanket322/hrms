@@ -10,3 +10,4 @@ jobs:
     with: 
       base_ref: "hello"
       repo_name: ${{ github.event.repository.name }}
+      callers_codecov_token: ${{ secrets.CODECOV_TOKEN  }}
