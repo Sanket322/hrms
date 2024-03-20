@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - develop
+env:
+   HR_BRANCH: ${{ github.base_ref || github.ref_name }}
 jobs:
   call-workflow-passing-data:
     uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
@@ -11,5 +13,6 @@ jobs:
       base_ref: ${{ github.base_ref || github.ref_name }} 
       repo_name: ${{ github.event.repository.name }}
     secrets: 
+      branch_to_clone : ${{ env.HR_BRANCH }}
       callers_codecov_token: ${{ secrets.GITHUB_TOKEN }}
       # callers_codecov_token: ${{ secrets.CODECOV_TOKEN  }}
