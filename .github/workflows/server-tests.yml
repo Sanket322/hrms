@@ -8,7 +8,7 @@ jobs:
   call-workflow-passing-data:
     uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
     with: 
-      base_ref: "change-workflow"
+      base_ref: ${{ github.base_ref || github.ref_name }} 
       repo_name: ${{ github.event.repository.name }}
     secrets: 
       callers_codecov_token: ${{ secrets.GITHUB_TOKEN }}
