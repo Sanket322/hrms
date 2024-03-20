@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  workflow_call:
   push:
     branches: [develop, version-14-hotfix, version-14]
     paths-ignore:
@@ -95,6 +96,11 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
+
+      - name: Printing
+        run: | 
+              echo "Repo name ${{ inputs.repo_name  }} base_ref: ${{ inputs.base_ref }}  " 
+              echo ${{ env.HR_BRANCH }}
 
       - name: Install
         run: |
