@@ -1,20 +1,20 @@
-# name: CI
+name: CI
 
-# on:
-#   workflow_dispatch:
-#   push:
-#     branches:
-#       - develop
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
 
-# jobs:
-#   call-workflow-passing-data:
-#      uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
-#      with:
-#         base_ref: 'develop'
-#         app_name: ${{ github.event.repository.name }}
-#         # secrets: 
-#         #   codecov_token: ${{ secrets.GITHUB_TOKEN }}
-#         #   callers_codecov_token: ${{ secrets.CODECOV_TOKEN  }}
+jobs:
+  call-workflow-passing-data:
+     uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
+     with:
+        base_ref: 'develop'
+        app_name: ${{ github.event.repository.name }}
+        # secrets: 
+        #   codecov_token: ${{ secrets.GITHUB_TOKEN }}
+        #   callers_codecov_token: ${{ secrets.CODECOV_TOKEN  }}
 
 
 
