@@ -21,7 +21,7 @@ mysql --host 127.0.0.1 --port 3306 -u root -ptravis -e "CREATE USER 'test_frappe
 mysql --host 127.0.0.1 --port 3306 -u root -ptravis -e "CREATE DATABASE test_frappe"
 mysql --host 127.0.0.1 --port 3306 -u root -ptravis -e "GRANT ALL PRIVILEGES ON \`test_frappe\`.* TO 'test_frappe'@'localhost'"
 
-mysql --host 127.0.0.1 --port 3306 -u root -ptravis -e "UPDATE mysql.user SET Password=PASSWORD('travis') WHERE User='root'"
+# mysql --host 127.0.0.1 --port 3306 -u root -ptravis -e "UPDATE mysql.user SET Password=PASSWORD('travis') WHERE User='root'"
 mysql --host 127.0.0.1 --port 3306 -u root -ptravis -e "FLUSH PRIVILEGES"
 
 install_whktml() {
