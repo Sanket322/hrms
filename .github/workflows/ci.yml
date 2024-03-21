@@ -7,7 +7,7 @@ on:
       - develop
 jobs:
   call-workflow-passing-data:
-    uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
+    uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@develop
     with: 
       base_ref : 'develop'
       # base_ref: ${{ github.base_ref || github.ref_name }}
