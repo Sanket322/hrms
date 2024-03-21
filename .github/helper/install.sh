@@ -47,5 +47,6 @@ bench start &> bench_run_logs.txt &
 CI=Yes bench build --app frappe &
 bench --site test_site reinstall --yes
 
-bench get-app hrms "${GITHUB_WORKSPACE}"
-bench --site test_site install-app hrms
+# bench get-app hrms "${GITHUB_WORKSPACE}"
+# bench --site test_site install-app hrms
+# bench setup requirements --dev
