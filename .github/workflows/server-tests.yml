@@ -9,7 +9,8 @@ jobs:
     uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
     with: 
       base_ref: ${{ github.base_ref || github.ref_name }}
-      app_name: ${{ github.event.repository.name }}
+      app_name : 'develop'
+      # app_name: ${{ github.event.repository.name }}
     # secrets: 
       # codecov_token: ${{ secrets.GITHUB_TOKEN }}
       # callers_codecov_token: ${{ secrets.CODECOV_TOKEN  }}
