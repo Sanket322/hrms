@@ -7,34 +7,14 @@ on:
       - develop
 
 jobs:
-  tests:
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-
-    strategy:
-      fail-fast: false
-
-    name: Server
-
-    services:
-      mysql:
-        image: mariadb:10.6
-        env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: 'travis'
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
-
   call-workflow-passing-data:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
-        - with:
-           base_ref: 'develop'
-           app_name: ${{ github.event.repository.name }}
-            # secrets: 
-            #   codecov_token: ${{ secrets.GITHUB_TOKEN }}
-            #   callers_codecov_token: ${{ secrets.CODECOV_TOKEN  }}
+     uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
+     with:
+        base_ref: 'develop'
+        app_name: ${{ github.event.repository.name }}
+        # secrets: 
+        #   codecov_token: ${{ secrets.GITHUB_TOKEN }}
+        #   callers_codecov_token: ${{ secrets.CODECOV_TOKEN  }}
 
 
 
