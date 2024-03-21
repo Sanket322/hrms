@@ -10,6 +10,6 @@ jobs:
     with: 
       base_ref: ${{ github.base_ref || github.ref_name }}
       app_name: ${{ github.event.repository.name }}
-    # secrets: 
-      # callers_codecov_token: ${{ secrets.GITHUB_TOKEN }}
+    secrets: 
+      callers_codecov_token: ${{ secrets.GITHUB_TOKEN }}
       # callers_codecov_token: ${{ secrets.CODECOV_TOKEN  }}
