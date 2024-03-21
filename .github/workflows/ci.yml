@@ -26,10 +26,12 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
 
   call-workflow-passing-data:
-      uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
-      with:
-          base_ref: 'develop'
-          app_name: ${{ github.event.repository.name }}
+      runs-on: ubuntu-latest
+      steps:
+        - uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
+        - with:
+           base_ref: 'develop'
+           app_name: ${{ github.event.repository.name }}
             # secrets: 
             #   codecov_token: ${{ secrets.GITHUB_TOKEN }}
             #   callers_codecov_token: ${{ secrets.CODECOV_TOKEN  }}
