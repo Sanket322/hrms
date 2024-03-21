@@ -24,11 +24,8 @@ jobs:
                 options: --health-cmd="mariadb-admin ping" --health-interval=5s --health-timeout=2s --health-retries=3
                 
     call-workflow-passing-data:
-          runs-on: ubuntu-latest
-          steps : 
-          - name: resuable_workflow
-            uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
-            with: 
+          uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
+          with: 
               base_ref : 'develop'
               # base_ref: ${{ github.base_ref || github.ref_name }}
               app_name: ${{ github.event.repository.name }}
