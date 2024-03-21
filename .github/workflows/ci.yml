@@ -1,93 +1,93 @@
-# name: CI
-
-# on:
-#   workflow_dispatch:
-#   push:
-#     branches:
-#       - develop
-
-# jobs:
-#   call-workflow-passing-data:
-#      uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
-#      with:
-#         base_ref: 'develop'
-#         app_name: ${{ github.event.repository.name }}
-#         # secrets: 
-#         #   codecov_token: ${{ secrets.GITHUB_TOKEN }}
-#         #   callers_codecov_token: ${{ secrets.CODECOV_TOKEN  }}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 name: CI
 
 on:
   workflow_dispatch:
   push:
-    branches: [develop, version-14-hotfix, version-14]
-    paths-ignore:
-      - "**.css"
-      - "**.js"
-      - "**.md"
-      - "**.html"
-      - "**.csv"
-
-  pull_request:
-    paths-ignore:
-      - "**.css"
-      - "**.js"
-      - "**.md"
-      - "**.html"
-      - "**.csv"
-  schedule:
-    # Run everday at midnight UTC / 5:30 IST
-    - cron: "0 0 * * *"
-env:
-    HR_BRANCH: ${{ github.base_ref || github.ref_name }}
-
-concurrency:
-  group: develop-${{ github.event.number }}
-  cancel-in-progress: true
+    branches:
+      - develop
 
 jobs:
-  tests:
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
+  call-workflow-passing-data:
+     uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
+     with:
+        base_ref: 'develop'
+        app_name: ${{ github.event.repository.name }}
+        # secrets: 
+        #   codecov_token: ${{ secrets.GITHUB_TOKEN }}
+        #   callers_codecov_token: ${{ secrets.CODECOV_TOKEN  }}
 
-    strategy:
-      fail-fast: false
 
-    name: Server
 
-    services:
-      mysql:
-        image: mariadb:10.3
-        env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: YES
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
 
-    steps:
-      - name: call-workflow-passing-data
-        uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
-        with:
-          base_ref: 'develop'
-          app_name: ${{ github.event.repository.name }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: CI
+
+# on:
+#   workflow_dispatch:
+#   push:
+#     branches: [develop, version-14-hotfix, version-14]
+#     paths-ignore:
+#       - "**.css"
+#       - "**.js"
+#       - "**.md"
+#       - "**.html"
+#       - "**.csv"
+
+#   pull_request:
+#     paths-ignore:
+#       - "**.css"
+#       - "**.js"
+#       - "**.md"
+#       - "**.html"
+#       - "**.csv"
+#   schedule:
+#     # Run everday at midnight UTC / 5:30 IST
+#     - cron: "0 0 * * *"
+# env:
+#     HR_BRANCH: ${{ github.base_ref || github.ref_name }}
+
+# concurrency:
+#   group: develop-${{ github.event.number }}
+#   cancel-in-progress: true
+
+# jobs:
+#   tests:
+#     runs-on: ubuntu-latest
+#     timeout-minutes: 60
+
+#     strategy:
+#       fail-fast: false
+
+#     name: Server
+
+#     services:
+#       mysql:
+#         image: mariadb:10.3
+#         env:
+#           MYSQL_ALLOW_EMPTY_PASSWORD: YES
+#         ports:
+#           - 3306:3306
+#         options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
+
+#     steps:
+#       - name: call-workflow-passing-data
+#         uses: Sanket322/india-compliance/.github/workflows/server-tests.yml@Reusable_Workflow
+#         with:
+#           base_ref: 'develop'
+#           app_name: ${{ github.event.repository.name }}
 
 #       - name: Setup Python
 #         uses: actions/setup-python@v2
