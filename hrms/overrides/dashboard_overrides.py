@@ -93,4 +93,6 @@ def get_dashboard_for_bank_account(data):
 			section["items"].append("Payroll Entry")
 			break
 
+	data["non_standard_fieldnames"].update({"Payroll Entry": "bank_account"})
+
 	return data
